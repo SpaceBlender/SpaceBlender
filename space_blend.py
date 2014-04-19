@@ -133,27 +133,25 @@ class SpaceBlender(object):
                 texture_location = self.filepath.split('/')[-1:]
                 texture_location = texture_location[0].split('.')[:1]
                 texture_location = os.getcwd()+'/'+texture_location[0]+'_'+self.color_pattern+'.tiff'
-                color_file = '/usr/share/blender/scripts/addons/USGS/color_maps/' + self.color_pattern + '.txt'
-                merge_location = '/usr/share/blender/scripts/addons/USGS/hsv_merge.py'
+                color_file = '/usr/share/blender/scripts/addons/SpaceBlender/color_maps/' + self.color_pattern + '.txt'
+                merge_location = '/usr/share/blender/scripts/addons/SpaceBlender/hsv_merge.py'
             elif _platform == "darwin":
             # OS X
                         # Strip out the image name to set texture location and append color choice.
                 texture_location = self.filepath.split('/')[-1:]
                 texture_location = texture_location[0].split('.')[:1]
                 texture_location = os.getcwd()+'/'+texture_location[0]+'_'+self.color_pattern+'.tiff'
-                color_file = '/Applications/Blender/blender.app/Contents/MacOS/2.69/scripts/addons/USGS/color_maps/'\
+                color_file = '/Applications/Blender/blender.app/Contents/MacOS/2.69/scripts/addons/SpaceBlender/color_maps/'\
                     + self.color_pattern + '.txt'
-                merge_location = '/Applications/Blender/blender.app/Contents/MacOS/2.69/scripts/addons/USGS/hsv_merge.py'
+                merge_location = '/Applications/Blender/blender.app/Contents/MacOS/2.69/scripts/addons/SpaceBlender/hsv_merge.py'
             elif _platform == "win32":
             # Windows.
                 # Strip out the image name to set texture location and append color choice.
                 texture_location = self.filepath.split('\\')[-1:]
                 texture_location = texture_location[0].split('.')[:1]
                 texture_location = os.getcwd()+'\\'+texture_location[0]+'_'+self.color_pattern+'.tiff'
-                color_file = '"'+'C:'+'\\'+'Program Files'+'\\'+'Blender Foundation'+'\\'+'Blender'+'\\'+'2.69'+'\\'+'' \
-                    'scripts'+'\\'+'addons'+'\\'+'USGS'+'\\'+'color_maps'+'\\' + self.color_pattern + '.txt'+'"'
-                merge_location = '"'+'C:'+'\\'+'Program Files'+'\\'+'Blender Foundation'+'\\'+'Blender'+'\\'+'' \
-                    '2.69\scripts'+'\\'+'addons'+'\\'+'USGS'+'\\'+'hsv_merge.py'+'"'
+                color_file = '"'+'C:\\Program Files\\Blender Foundation\\Blender\\2.69\\scripts\\addons\\SpaceBlender\\color_maps\\'+self.color_pattern + '.txt'+'"'
+                merge_location = '"'+'C:\\Program Files\\Blender Foundation\\Blender\\2.69\scripts\\addons\\SpaceBlender\\hsv_merge.py'+'"'
 
             gdal = gdal_module.GDALDriver(dtm_location)
             gdal.gdal_hillshade(hill_shade)
