@@ -8,9 +8,9 @@
 import bpy
 from bpy.props import *
 from bpy_extras.io_utils import ImportHelper
-from USGS import blender_module
-from USGS import gdal_module
-from USGS import flyover_module
+from SpaceBlender import blender_module
+from SpaceBlender import gdal_module
+from SpaceBlender import flyover_module
 import os
 from sys import platform as _platform
 import sys
