@@ -902,6 +902,7 @@ class DTMViewerRenderContext:
             flyover.linear_pattern()
             print("Linear flyover pattern created")
 
+    #This function is only used when running pipeline from the command line without the Blender UI
     def auto_render(self, animation, resolution='1080p'):
         #This assumes only one camera in the scene.
         bpy.context.scene.camera = bpy.data.objects['Camera']
@@ -909,7 +910,6 @@ class DTMViewerRenderContext:
         if animation:
             bpy.data.scenes["Scene"].render.filepath = os.getcwd()+'/'+\
                 DTMViewerRenderContext.render_save_path[0]
-            bpy.data.scenes['Scene'].frame_end = 10
             bpy.ops.render.render(animation=True)
         else:
             bpy.data.scenes["Scene"].render.filepath = os.getcwd()+'/'+\
