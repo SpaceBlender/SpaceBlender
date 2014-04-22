@@ -1,4 +1,13 @@
 SpaceBlender Pipeline for the command line
+Download the latest plugin from https://github.com/SpaceBlender/SpaceBlender
+or by going to our website http://www.cefns.nau.edu/capstone/projects/CS/2014/SpaceBlenders/
+The name of the folder has changed to SpaceBlender. If the downloaded folder has the
+name SpaceBlender-master or any other name change it before adding it to Blender.
+For the pipeline to work the folder placed in Blender **must** be name SpaceBlender
+Place this script in any directory you want and cd into that directory with the
+command line. Place your DEM image into that directory and then run the pipeline
+according to these instructions
+
 To use the SpaceBlender Pipeline your command should look like:
 blender -b -P space_blend.py test_dem.IMG
 
@@ -36,3 +45,7 @@ Resolutions:
 A sample command with options could look like:
 blender -b -P space_blend.py test_dem.IMG 480p Linear Stars Mist
 blender -b -P space_blend.py test_dem.IMG circle 720p stars
+
+If you choose to not do a flyover a still image will be saved to the current directory.
+A command for no flyover can look like:
+blender -b -P space_blend.py test_dem.IMG 720p stars noflyover
