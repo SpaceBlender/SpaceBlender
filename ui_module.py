@@ -111,15 +111,12 @@ class UI_Driver(bpy.types.Operator, ImportHelper):
             color_relief = os.path.normpath("\""+project_location+"/maps/colorrelief.tiff\"")
 
             gdal = gdal_module.GDALDriver(dtm_location)
-            #gdal.gdal_clean_up(hill_shade, color_relief)
             gdal.gdal_hillshade(hill_shade)
             gdal.gdal_color_relief(color_file, color_relief)
             gdal.hsv_merge(merge_location, hill_shade, color_relief, texture_location)
 
             print('\nSaving texture at: ' + texture_location)
             gdal.gdal_clean_up(hill_shade, color_relief)
-            print("BBBB", self.color_pattern)
-            print("AGAAAA", self.flyover_pattern)
         ################################################################################
         ####################Execute DEM Importer and Blender Module#####################
         blender_module.load(self, context,
